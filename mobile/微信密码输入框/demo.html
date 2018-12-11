@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<script src="../../js/reset-fontsize.js"></script>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<style>
+	.input_password{
+		padding: .4rem .8rem;
+		display:  none;
+		background: #fff;
+	}
+	.input {
+		width: 100%;
+		height:  .7rem;
+		border:  1px solid #ddd;
+	}
+	.input input{
+		display: inline-block;
+		width: 16.6666%;
+		height: 100%;
+		border-right: 1px solid #ddd;
+		-webkit-box-sizing: border-box;
+		text-align: center;
+	}
+	.input:last-child{
+		border-right: none;
+	}
+	</style>
+</head>
+<body>
+	<button>show</button>
+	<div class="input_password">
+		<div class="input bsizing">
+			<input type="password" maxlength="1"/><!--dsds--><input type="password" maxlength="1"/><!--dsds--><input type="password" maxlength="1"/><!--dsds--><input type="password" maxlength="1"/><!--dsds--><input type="password" maxlength="1"/><!--dsds--><input type="password" maxlength="1"/>
+		</div>
+	</div>
+</body>
+<script>
+var active = 0;
+var inputList = document.querySelectorAll('.input input');
+document.querySelector('button').onclick = function () {
+	document.querySelector('.input_password').style.display = 'block';
+	inputList[0].focus()
+}
+
+for (var i = 0; i < inputList.length; i ++) {
+	inputList[i].addEventListener('keyup', inputNum, false);
+	inputList[i].addEventListener('click', inputFocus, false);
+}
+
+function inputNum () {
+	console.log(33)
+	if (this.value) {
+		active += 1;
+		if (active >= inputList.length - 1) {
+			active = inputList.length - 1
+		}
+		console.log(active)
+		inputList[active].focus();
+	}
+	else {
+		active -= 1;
+		if (active <= 0) {
+			active = 0;
+		}
+		
+		inputList[active].focus();
+		inputList[active].value = '';
+	}
+}
+
+function inputFocus () {
+		this.blur()
+		inputList[active].focus();
+}
+
+</script>
+</html>

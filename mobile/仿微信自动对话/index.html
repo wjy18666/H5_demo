@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>微信对话回复</title>
+	<script src="../../js/reset-fontsize.js"></script>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<style>
+		body{
+			background: #ccc;
+		}
+		.conversation{
+			padding: .2rem;
+		}
+		.conversation .person1 img, .photo{
+			width: 1rem;
+			height: 1rem;
+			border-radius: 100%;
+		}
+		.photo {
+			position: relative;
+		}
+		.photo span{
+			position: absolute;
+			top: 50%;
+			right: -.4rem;
+			width: .2rem;
+			height: .2rem;
+			background: #fff;
+			margin-top: -.1rem;
+			-webkit-transform: rotate(45deg);
+			transform: rotate(45deg);
+		}
+		.conversation .content{
+			max-width: 5rem;
+			min-height: .6rem;
+			line-height: .5rem;
+			background: #fff;
+			margin-left: .3rem;
+			border-radius: .1rem;
+			padding: .2rem;
+		}
+
+		.person1{
+			margin-bottom: .4rem;
+		}
+
+		.person2 .photo span{
+			left: -.4rem;
+			background: #13CE66;
+		}
+		.conversation .person2 .content{
+			margin: 0 .3rem 0 0;
+			background: #13CE66;
+		}
+	</style>
+</head>
+<body>
+	<div class="conversation"></div>
+</body>
+
+<script>
+var talkContent = [
+	'你好，在吗？',
+	'在的，有什么事情吗？',
+	'吃饭了没？',
+	'还没啊，怎么？',
+	'那顺便一起呗',
+	'OK',
+	'去哪吃呢？',
+	'你有什么好建议吗？',
+	'或者什么地方有好吃的？',
+	'你好，在吗？',
+	'在的，有什么事情吗？',
+	'吃饭了没？',
+	'还没啊，怎么？',
+	'那顺便一起呗',
+	'OK',
+	'去哪吃呢？',
+	'你有什么好建议吗？',
+	'或者什么地方有好吃的？',
+	'你好，在吗？',
+	'在的，有什么事情吗？',
+	'吃饭了没？',
+	'还没啊，怎么？',
+	'那顺便一起呗',
+	'OK',
+	'去哪吃呢？',
+	'你有什么好建议吗？',
+	'或者什么地方有好吃的？'
+]
+var k = 0;
+//	延迟函数
+function wait (delay) {
+		return new Promise(function (resolve, reject) {
+			setTimeout(resolve, delay)
+		})
+}
+
+//	会话函数
+function turnTalk (fn, classArr) {
+	return new Promise(function (resolve, reject) {
+		resolve()
+		fn(classArr)
+	})
+}
+
+
+//	会话动态生成DOM
+function question (classArr) {
+	if (k > talkContent.length - 1) {
+		return
+	}
+
+	var content = document.createElement('div')
+	for (var i = 0; i < classArr.length; i ++) {
+		content.classList.add(classArr[i])
+	}
+	var str = [
+		'<div class="photo '+ (classArr.indexOf('person2') > -1 ? 'fr' : 'fl') +'">',
+			'<img src="../../img/person'+ (classArr.indexOf('person2') > -1 ? '2' : '1') +'.jpg">',
+			'<span></span>',
+		'</div>',
+		'<div class="content '+ (classArr.indexOf('person2') > -1 ? 'fr' : 'fl') +'">',
+			'<span class="icon"></span>',
+			talkContent[k],
+		'</div>'
+	].join('')
+	content.innerHTML = str
+
+	document.querySelector('.conversation').appendChild(content)
+
+	var h = document.body.scrollHeight
+	document.body.scrollTop = h
+
+	k++
+}
+
+//	递归执行会话
+function Talking () {
+	if (k > talkContent.length - 1) {
+		return
+	}
+
+	wait(1500)
+	.then(function () {
+		return turnTalk(question, ['person1', 'clearfix'])
+	})
+	.then(function () {
+		return wait(1500)
+	})
+	.then(function () {
+		return turnTalk(question, ['person1', 'person2', 'clearfix'])
+	})
+	.then(function () {
+		Talking ()
+	})
+}
+
+Talking()
+
+</script>
+</html>

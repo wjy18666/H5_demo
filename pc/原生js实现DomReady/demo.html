@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>dom ready</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.show{
+		width: 100px;
+		height: 100px;
+		background: red;
+	}
+	</style>
+</head>
+<body>
+	<div class="show">
+		hello world!
+	</div>
+</body>
+<script>
+/*	var agent = navigator.userAgent;
+	var ie = !!(window.attachEvent && !window.opera)
+
+	document.ready = function (f) {
+		if (ie) {
+			(function () {
+				try {
+					document.documentElement.doScroll('left')
+				} 
+				catch (err) {
+					arguments.callee()
+				}
+				f()
+			})()
+		}
+		else {
+			return document.addEventListener('DOMContentLoaded', f, false)
+		}
+	}
+
+	document.ready(function () {
+		alert('ready')
+	})*/
+
+/*	function ready(fn){
+	    if(document.addEventListener) {
+	        document.addEventListener('DOMContentLoaded', function() {
+	            //注销事件, 避免反复触发
+	            document.removeEventListener('DOMContentLoaded',arguments.callee, false);
+	            fn();            //执行函数
+	        }, false);
+	    }else if(document.attachEvent) {        //IE
+	        document.attachEvent('onreadystatechange', function() {
+	            if(document.readyState == 'complete') {
+	                document.detachEvent('onreadystatechange', arguments.callee);
+	                fn();        //函数执行
+	            }
+	        });
+	    }
+	};
+
+	ready(function () {
+		alert('ready')
+	})*/
+
+
+function ready (fn) {
+	if (window.addEventListener) {
+		document.addEventListener('DOMContentLoaded', function () {
+			document.removeEventListener('DOMContentLoaded', arguments.callee, false)
+			fn()
+		}, false)
+	}
+	else if (window.attachEvent) {
+		document.attachEvent('onreadystatechange', function () {
+			if (document.readyState == 'complete') {
+				document.detachEvent('onreadystatechange', arguments.callee)
+				fn()
+			}
+		})
+	}
+}
+
+
+ready(function () {
+	alert(666)
+})
+</script>
+</html>

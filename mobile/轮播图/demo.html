@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>轮播图移动端</title>
+		<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="swiper-container">
+        <ul class="swiper-wrapper clearfix">
+          <li class="swiper-slide">
+            <img src="./images/1.jpg" />
+					</li>
+					<li class="swiper-slide">
+						<img src="./images/2.jpg" />
+					</li>
+					<li class="swiper-slide">
+						<img src="./images/3.jpg" />
+					</li>
+					<li class="swiper-slide">
+						<img src="./images/4.jpg" />
+					</li>
+				</ul>
+				<div class="pagination"></div>
+		</div>
+
+		<script src="./demo.js"></script>
+		<script>
+			var opt = {test: 'test'};
+		var swiper = new Swiper(opt);
+		</script>
+</body>
+</html>

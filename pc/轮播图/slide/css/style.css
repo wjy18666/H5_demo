@@ -1,0 +1,94 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+ul, ol{
+	list-style: none;
+}
+.slide_container{
+	width: 790px;
+	height: 340px;
+	overflow: hidden;
+	position: relative;
+}
+.slide_wrapper{
+	overflow: hidden;
+}
+
+.slide_container li{
+	width: 790px;
+	height: 340px;
+}
+
+.slide_container li img{
+	width: 100%;
+	height: 100%;
+}
+
+/* -------- 分页器 --------- */
+.slide_container .pagation{
+	width: 100%;
+	position: absolute;
+	bottom: 20px;
+	text-align: center;
+}
+.slide_container .pagation a{
+	display: inline-block;
+	*display: inline;
+	width: 12px;
+	height: 12px;
+	background: #666;
+	margin-right: 6px;
+	border-radius: 100%;
+	*zoom: 1;
+}
+.slide_container .pagation a.active{
+	background: #f6f6f6;
+	width: 25px;
+	border-radius: 10px;
+}
+
+/* -------- 左右箭头 ------- */
+.slide_container .switch_btn{
+	display: block;
+	width: 20px;
+	height: 40px;
+	position: absolute;
+	font-size: 20px;
+	line-height: 40px;
+	text-align: center;
+	color: #fff;
+	cursor: pointer;
+	display: none;
+}
+.slide_container:hover .switch_btn{
+	display: block;
+}
+.slide_container .switch_btn:hover{
+	background: black;
+	opacity: .7;
+}
+
+.slide_container .switch_btn.active{
+	background: black;
+	opacity: .6;
+}
+.slide_container .switch_btn.to_prev{
+	top: 50%;
+	left: 20px;
+	margin-top: -20px;
+}
+.slide_container .switch_btn.to_next{
+	top: 50%;
+	right: 20px;
+	margin-top: -20px;
+}
+
+/* ------- 横向 ------- */
+.slide_container.horizontal .slide_ele{
+	float: left;
+}
+
+.slide_container1, .slide_container2{
+	margin: 20px auto;
+}

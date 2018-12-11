@@ -1,0 +1,87 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+ul, ol{
+	list-style: none;
+}
+.slide_opacity_container{
+	width: 790px;
+	height: 340px;
+	position: relative;
+}
+.slide_opacity_container .slide_wrapper, .slide_opacity_container .slide_wrapper .slide_ele, .slide_opacity_container .slide_ele img{
+	width: 100%;
+	height: 100%;
+}
+.slide_opacity_container .slide_wrapper{
+	position: relative;
+}
+.slide_opacity_container .slide_wrapper .slide_ele{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+}
+
+/* -------- 分页器 --------- */
+.slide_opacity_container .pagation{
+	width: 100%;
+	position: absolute;
+	bottom: 20px;
+	text-align: center;
+	z-index: 1000;
+}
+.slide_opacity_container .pagation a{
+	display: inline-block;
+	*display: inline;
+	width: 12px;
+	height: 12px;
+	background: #666;
+	margin-right: 6px;
+	border-radius: 100%;
+	*zoom: 1;
+}
+.slide_opacity_container .pagation a.active{
+	background: #f6f6f6;
+	width: 25px;
+	border-radius: 10px;
+}
+
+/* -------- 左右箭头 ------- */
+.slide_opacity_container .switch_btn{
+	display: block;
+	width: 20px;
+	height: 40px;
+	position: absolute;
+	font-size: 20px;
+	line-height: 40px;
+	text-align: center;
+	color: #fff;
+	cursor: pointer;
+	background: #666;
+	display: none;
+	z-index: 1000;
+}
+.slide_opacity_container:hover .switch_btn{
+	display: block;
+}
+.slide_opacity_container .switch_btn:hover{
+	background: black;
+	opacity: .7;
+}
+
+.slide_opacity_container .switch_btn.active{
+	background: black;
+	opacity: .6;
+}
+.slide_opacity_container .switch_btn.to_prev{
+	top: 50%;
+	left: 20px;
+	margin-top: -20px;
+}
+.slide_opacity_container .switch_btn.to_next{
+	top: 50%;
+	right: 20px;
+	margin-top: -20px;
+}

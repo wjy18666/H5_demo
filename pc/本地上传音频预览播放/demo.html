@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>本地上传音频播放</title>
+</head>
+<body>
+  <input class="upload_btn" type="file" />
+  <audio class="music" src=""></audio>
+  <div>呵呵发生的范德是</div>
+  <script>
+    var paySrc = null;
+    function getObjectURL(file) {
+      var url = null;
+      if (window.createObjectURL !== undefined) {
+        url = window.createObjectURL(file);
+        console.log('createObjectURL')
+      } else if (window.URL !== undefined) {
+        url = window.URL.createObjectURL(file);
+        console.log('URL')
+      } else if (window.webkitURL !== undefined) {
+        url = window.webkitURL.createObjectURL(file)
+        console.log('webkitURL')
+      }
+
+      return url
+    }
+
+    var upload_btn = document.querySelector('.upload_btn')
+    var music = document.querySelector('.music')
+    upload_btn.onchange = function (e) {
+      var file = this.files[0]
+      var url = paySrc = getObjectURL(file)
+      
+      music.setAttribute('src', url)
+      music.play()
+    }
+
+    //  每隔几秒报警
+    function intervalWarn() {
+      var timer = null
+
+      timer = setInterval(() => {
+        if (!paySrc) return
+        music.play()
+      }, 5000)
+    }
+
+    intervalWarn()
+  </script>
+</body>
+</html>

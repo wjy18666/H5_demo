@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="full-screen" content="yes">
+    <script>
+    	document.addEventListener('DOMContentLoaded', function () {
+        var docEl = document.documentElement,
+          dpr = window.devicePixelRatio,
+          w = docEl.clientWidth;
+        docEl.style.fontSize = w / 7.5 + 'px'
+    	}, false)
+    </script>
+	<title>下拉刷新</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.list{
+		margin-top: .8rem;
+	}
+	.list li{
+		line-height: .8rem;
+		text-align: center;
+		border-bottom: 1px solid #ccc;
+		font-size: .28rem;
+	}
+	.title{
+		width: 100%;
+		line-height: .8rem;
+		text-align: center;
+		font-size: .28rem;
+		background: black;
+		color: #fff;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index:  100;
+	}
+	</style>
+</head>
+<body>
+	<div class="title">列表</div>
+
+	<div class="list">
+		<ul>
+			<li>list1</li>
+			<li>list2</li>
+			<li>list3</li>
+			<li>list4</li>
+			<li>list5</li>
+			<li>list6</li>
+			<li>list7</li>
+			<li>list8</li>
+			<li>list9</li>
+			<li>list10</li>
+			<li>list11</li>
+			<li>list12</li>
+			<li>list13</li>
+			<li>list14</li>
+			<li>list15</li>
+			<li>list16</li>
+			<li>list17</li>
+			<li>list18</li>
+			<li>list19</li>
+			<li>list20</li>
+		</ul>
+	</div>
+	<script src="js/pullUpRefresh.js"></script>
+	<script>
+		var opt = {
+			class: '.list'
+		}
+		new PullUpRefresh(opt)
+	</script>
+</body>
+</html>

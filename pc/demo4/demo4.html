@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<style>
+	body{
+		background: black;
+	}
+	.frame{
+		text-align: center;
+		transform-style: preserve-3d;
+		perspective: 1200px;
+	}
+	.frame ul{
+		display: inline-block;
+		margin: 100px 0;
+		position: relative;
+	}
+	.frame li{
+		display: inline-block;
+		width: 200px;
+		height: 300px;
+		overflow: hidden;
+	}
+	.frame li img{
+		width: 200px;
+		height: 300px;
+	}
+	.frame li.left{
+		transform: rotateY(75deg) translate3d(0, 0, -100px);
+		transition: transform .35s ease-out;
+	}
+	.frame li.right{
+		transform: rotateY(-75deg) translate3d(0, 0, -100px);
+		transition: transform .35s ease-out;
+	}
+	.frame li.current{
+		width: 250px;
+		height: 350px;
+		position: relative;
+		top: 20px;
+		/* top: 50%;
+		left: 50%;
+		margin-top: -175px;
+		margin-left: -125px; */
+	}
+	.frame li.current img{
+		width: 250px;
+		height: 350px;
+	}
+	.toleft, .toright{
+		color: #666;
+		position: absolute;
+		top: 50%;
+		width: 30px;
+		height: 60px;
+		line-height: 60px;
+		text-align: center;
+		background: #fff;
+		font-size: 30px;
+		margin-top: -10px;
+	}
+	.toleft{
+		left: -120px;
+	}
+	.toright{
+		right: -120px;
+	}
+
+	.tixing{
+		width: 100%;
+		height: 300px;
+		background: #fff;
+		margin: 30px auto;
+	}
+	.tixing .head{
+		width: 600px;
+		height: 40px;
+	}
+	.tixing .head .left{
+		background: #3b746d;
+		width: 85%;
+		height: 100%;
+	}
+	.tixing .head .right{
+		background: #31605b;
+		width: 15%;
+		height: 100%;
+		position: relative;
+	}
+	.tixing .head .icon{
+		width: 0;
+		height: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		border-left: 30px solid #3b746d;
+		border-bottom: 40px solid transparent;
+		/* border-bottom: 40px solid transparent;
+		border-left: 30px solid red; */
+		/* border-left: 30px solid red;
+		border-top: 20px solid transparent;
+		border-bottom: 20px solid transparent; */
+		/* border-top: 20px solid pink;
+		border-left: 20px solid yellow;
+		border-right: 20px solid #ccc;
+		border-bottom: 20px solid red; */
+	}
+
+	.parent{
+		width: 200px;
+		height: 200px;
+		background: red;
+		margin:  50px auto;
+		position: relative;
+	}
+	.child{
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background: blue;
+		width: 100px;
+		height: 100px;
+		margin: auto;
+	}
+	</style>
+</head>
+<body>
+	<div class="frame">
+		<ul class="clearfix">
+			<li class="left">
+				<img src="../img/11556.jpg">
+			</li>
+			<li class="left">
+				<img src="../img/11566.jpg">
+			</li>
+			<li class="current">
+				<img src="../img/11582.jpg">
+			</li>
+			<li class="right">
+				<img src="../img/11583.jpg">
+			</li>
+			<li class="right">
+				<img src="../img/11600.jpg">
+			</li>
+
+			<a class="toleft" href="javascript:;">&lt;</a>
+			<a class="toright" href="javascript:;">&gt;</a>
+		</ul>
+	</div>
+
+	<div class="tixing">
+		<div class="head clearfix">
+			<div class="left fl"></div>
+			<div class="right fl">
+				<span class="icon"></span>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="parent">
+		<div class="child"></div>
+	</div>
+</body>
+<script>
+var opt = {
+	index: 2,
+	imgArr: [
+		'11556.jpg',
+		'11566.jpg',
+		'11582.jpg',
+		'11583.jpg',
+		'11600.jpg',
+		'11556.jpg',
+		'11566.jpg',
+		'11582.jpg',
+		'11583.jpg',
+		'11600.jpg'
+	]
+}
+var list = document.querySelectorAll('.frame li');
+
+//创建DOM
+function renderUI (imgArr) {
+
+}
+
+//	设置左右class
+function setClass (index, list) {
+	for (var i = 0; i < list.length; i ++) {
+		if (i < index) {
+			list[i].classList.remove('right');
+			list[i].classList.add('left');
+		}
+
+		if (i > index) {
+			list[i].classList.remove('left');
+			list[i].classList.add('right');
+		}
+	}
+}
+
+
+//	右点击
+function toRight () {
+	list[opt.index].classList.remove('current');
+	
+	opt.index ++;
+	if (opt.index >= list.length) {
+		opt.index = 0
+	}
+
+	list[opt.index].classList.remove('left', 'right');
+	list[opt.index].classList.add('current');
+
+	setClass(opt.index, list)
+}
+
+//	左点击
+function toLeft () {
+	list[opt.index].classList.remove('current');
+	
+	opt.index --;
+	if (opt.index < 0) {
+		opt.index = list.length - 1
+	}
+
+	list[opt.index].classList.remove('left', 'right');
+	list[opt.index].classList.add('current');
+
+	setClass(opt.index, list)
+}
+
+document.querySelector('.toright').addEventListener('click', toRight, false)
+document.querySelector('.toleft').addEventListener('click', toLeft, false)
+</script>
+</html>

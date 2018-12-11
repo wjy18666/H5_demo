@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>滚动到底部加载更多demo</title>
+  <link rel="stylesheet" href="./css/style.css"/>
+</head>
+<body>
+  <div class="container container1">
+    <ul>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+      <li>66666</li>
+    </ul>
+  </div>
+
+  <div class="container container2">
+      <ul>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+        <li>66666</li>
+      </ul>
+    </div>
+
+  <script src="../../util/util.js"></script>
+  <script src="./js/scrollToBottom.js"></script>
+  <script>
+    var scrollToBottom1 = new ScrollToBottom({
+      height: 400,
+      class: '.container1',
+      callBack: function () {
+        console.log('到底部了11')
+      }
+    })
+
+    var scrollToBottom2 = new ScrollToBottom({
+      class: '.container2',
+      height: 400,
+      callBack: function () {
+        console.log('到底部了22')
+      }
+    })
+  </script>
+</body>
+</html>

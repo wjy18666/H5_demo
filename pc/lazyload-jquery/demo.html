@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>lazyload</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	ul {
+		list-style: none;
+	}
+	.clearfix:after{
+		display: block;
+		content: "";
+		height: 0;
+		clear: both;
+		visibility: hidden;
+	}
+	.clearfix{
+		clear: both;
+		zoom: 1;
+	}
+	.img_box ul{
+		margin-left: -10px;
+	}
+	.img_box li{
+		width:  193px;
+		height: 130px;
+		float: left;
+		margin-right: 10px;
+		background: url('images/lazyload.gif') no-repeat center center;
+		background-color: #ccc;
+		margin-bottom: 10px;
+	}
+	.img_box li img{
+		width: 100%;
+		height: 100%;
+	}
+	.img_box {
+		width: 600px;
+		margin: 30px auto;
+	}
+	</style>
+	<script src="../../js/jquery-1.11.2.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="img_box">
+			<ul class="clearfix">
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/jfs/t4624/198/1266456958/134191/179dd19a/58db754eN2d52bafb.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/jfs/t4870/293/1179634888/130807/d9f8224c/58ede863N5620dc99.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4399/303/2514428771/40607/a2b3093/58f04587Nd8346fdd.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4507/208/2132374581/40132/dae693a9/58ec82e6N0f215d1d.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4666/269/2305849858/51248/ac4e3cfc/58edf9b4Nfd480c03.jpg!q90"></li>
+				<li class="lazyload" class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4729/131/1082870187/33470/27d8021f/58ec95feNde178c3b.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4768/9/1168306807/62888/ec5e4d06/58edcf32N145adb1c.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t5047/174/1240950455/36977/252e660/58eef348Nf75fdf91.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img10.360buyimg.com/cms/s100x100_jfs/t4918/132/1165346973/21518/fc9f36eb/58ed8736Nb04285c6.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/jfs/t4624/198/1266456958/134191/179dd19a/58db754eN2d52bafb.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/jfs/t4870/293/1179634888/130807/d9f8224c/58ede863N5620dc99.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4399/303/2514428771/40607/a2b3093/58f04587Nd8346fdd.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4507/208/2132374581/40132/dae693a9/58ec82e6N0f215d1d.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4666/269/2305849858/51248/ac4e3cfc/58edf9b4Nfd480c03.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4729/131/1082870187/33470/27d8021f/58ec95feNde178c3b.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4768/9/1168306807/62888/ec5e4d06/58edcf32N145adb1c.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t5047/174/1240950455/36977/252e660/58eef348Nf75fdf91.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img10.360buyimg.com/cms/s100x100_jfs/t4918/132/1165346973/21518/fc9f36eb/58ed8736Nb04285c6.jpg"></li>
+			</ul>
+		</div>
+
+		<div class="img_box">
+			<ul class="clearfix">
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/jfs/t4624/198/1266456958/134191/179dd19a/58db754eN2d52bafb.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/jfs/t4870/293/1179634888/130807/d9f8224c/58ede863N5620dc99.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4399/303/2514428771/40607/a2b3093/58f04587Nd8346fdd.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4507/208/2132374581/40132/dae693a9/58ec82e6N0f215d1d.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4666/269/2305849858/51248/ac4e3cfc/58edf9b4Nfd480c03.jpg!q90"></li>
+				<li class="lazyload" class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4729/131/1082870187/33470/27d8021f/58ec95feNde178c3b.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4768/9/1168306807/62888/ec5e4d06/58edcf32N145adb1c.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t5047/174/1240950455/36977/252e660/58eef348Nf75fdf91.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img10.360buyimg.com/cms/s100x100_jfs/t4918/132/1165346973/21518/fc9f36eb/58ed8736Nb04285c6.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/jfs/t4624/198/1266456958/134191/179dd19a/58db754eN2d52bafb.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/jfs/t4870/293/1179634888/130807/d9f8224c/58ede863N5620dc99.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4399/303/2514428771/40607/a2b3093/58f04587Nd8346fdd.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4507/208/2132374581/40132/dae693a9/58ec82e6N0f215d1d.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4666/269/2305849858/51248/ac4e3cfc/58edf9b4Nfd480c03.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4729/131/1082870187/33470/27d8021f/58ec95feNde178c3b.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4768/9/1168306807/62888/ec5e4d06/58edcf32N145adb1c.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t5047/174/1240950455/36977/252e660/58eef348Nf75fdf91.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img10.360buyimg.com/cms/s100x100_jfs/t4918/132/1165346973/21518/fc9f36eb/58ed8736Nb04285c6.jpg"></li>
+			</ul>
+		</div>
+
+		<div class="img_box">
+			<ul  class="clearfix">
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/jfs/t4624/198/1266456958/134191/179dd19a/58db754eN2d52bafb.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/jfs/t4870/293/1179634888/130807/d9f8224c/58ede863N5620dc99.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4399/303/2514428771/40607/a2b3093/58f04587Nd8346fdd.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4507/208/2132374581/40132/dae693a9/58ec82e6N0f215d1d.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4666/269/2305849858/51248/ac4e3cfc/58edf9b4Nfd480c03.jpg!q90"></li>
+				<li class="lazyload" class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4729/131/1082870187/33470/27d8021f/58ec95feNde178c3b.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4768/9/1168306807/62888/ec5e4d06/58edcf32N145adb1c.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t5047/174/1240950455/36977/252e660/58eef348Nf75fdf91.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img10.360buyimg.com/cms/s100x100_jfs/t4918/132/1165346973/21518/fc9f36eb/58ed8736Nb04285c6.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/jfs/t4624/198/1266456958/134191/179dd19a/58db754eN2d52bafb.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/jfs/t4870/293/1179634888/130807/d9f8224c/58ede863N5620dc99.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4399/303/2514428771/40607/a2b3093/58f04587Nd8346fdd.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4507/208/2132374581/40132/dae693a9/58ec82e6N0f215d1d.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4666/269/2305849858/51248/ac4e3cfc/58edf9b4Nfd480c03.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4729/131/1082870187/33470/27d8021f/58ec95feNde178c3b.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4768/9/1168306807/62888/ec5e4d06/58edcf32N145adb1c.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t5047/174/1240950455/36977/252e660/58eef348Nf75fdf91.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img10.360buyimg.com/cms/s100x100_jfs/t4918/132/1165346973/21518/fc9f36eb/58ed8736Nb04285c6.jpg"></li>
+			</ul>
+		</div>
+
+		<div class="img_box">
+			<ul  class="clearfix">
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/jfs/t4624/198/1266456958/134191/179dd19a/58db754eN2d52bafb.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/jfs/t4870/293/1179634888/130807/d9f8224c/58ede863N5620dc99.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4399/303/2514428771/40607/a2b3093/58f04587Nd8346fdd.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4507/208/2132374581/40132/dae693a9/58ec82e6N0f215d1d.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4666/269/2305849858/51248/ac4e3cfc/58edf9b4Nfd480c03.jpg!q90"></li>
+				<li class="lazyload" class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4729/131/1082870187/33470/27d8021f/58ec95feNde178c3b.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4768/9/1168306807/62888/ec5e4d06/58edcf32N145adb1c.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t5047/174/1240950455/36977/252e660/58eef348Nf75fdf91.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img10.360buyimg.com/cms/s100x100_jfs/t4918/132/1165346973/21518/fc9f36eb/58ed8736Nb04285c6.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/jfs/t4624/198/1266456958/134191/179dd19a/58db754eN2d52bafb.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/jfs/t4870/293/1179634888/130807/d9f8224c/58ede863N5620dc99.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4399/303/2514428771/40607/a2b3093/58f04587Nd8346fdd.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4507/208/2132374581/40132/dae693a9/58ec82e6N0f215d1d.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4666/269/2305849858/51248/ac4e3cfc/58edf9b4Nfd480c03.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4729/131/1082870187/33470/27d8021f/58ec95feNde178c3b.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4768/9/1168306807/62888/ec5e4d06/58edcf32N145adb1c.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t5047/174/1240950455/36977/252e660/58eef348Nf75fdf91.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img10.360buyimg.com/cms/s100x100_jfs/t4918/132/1165346973/21518/fc9f36eb/58ed8736Nb04285c6.jpg"></li>
+			</ul>
+		</div>
+
+		<div class="img_box">
+			<ul  class="clearfix">
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/jfs/t4624/198/1266456958/134191/179dd19a/58db754eN2d52bafb.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/jfs/t4870/293/1179634888/130807/d9f8224c/58ede863N5620dc99.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4399/303/2514428771/40607/a2b3093/58f04587Nd8346fdd.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4507/208/2132374581/40132/dae693a9/58ec82e6N0f215d1d.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4666/269/2305849858/51248/ac4e3cfc/58edf9b4Nfd480c03.jpg!q90"></li>
+				<li class="lazyload" class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4729/131/1082870187/33470/27d8021f/58ec95feNde178c3b.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4768/9/1168306807/62888/ec5e4d06/58edcf32N145adb1c.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t5047/174/1240950455/36977/252e660/58eef348Nf75fdf91.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img10.360buyimg.com/cms/s100x100_jfs/t4918/132/1165346973/21518/fc9f36eb/58ed8736Nb04285c6.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/jfs/t4624/198/1266456958/134191/179dd19a/58db754eN2d52bafb.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/jfs/t4870/293/1179634888/130807/d9f8224c/58ede863N5620dc99.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4399/303/2514428771/40607/a2b3093/58f04587Nd8346fdd.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4507/208/2132374581/40132/dae693a9/58ec82e6N0f215d1d.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4666/269/2305849858/51248/ac4e3cfc/58edf9b4Nfd480c03.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4729/131/1082870187/33470/27d8021f/58ec95feNde178c3b.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4768/9/1168306807/62888/ec5e4d06/58edcf32N145adb1c.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t5047/174/1240950455/36977/252e660/58eef348Nf75fdf91.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img10.360buyimg.com/cms/s100x100_jfs/t4918/132/1165346973/21518/fc9f36eb/58ed8736Nb04285c6.jpg"></li>
+			</ul>
+		</div>
+
+		<div class="img_box">
+			<ul  class="clearfix">
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/jfs/t4624/198/1266456958/134191/179dd19a/58db754eN2d52bafb.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/jfs/t4870/293/1179634888/130807/d9f8224c/58ede863N5620dc99.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4399/303/2514428771/40607/a2b3093/58f04587Nd8346fdd.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4507/208/2132374581/40132/dae693a9/58ec82e6N0f215d1d.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4666/269/2305849858/51248/ac4e3cfc/58edf9b4Nfd480c03.jpg!q90"></li>
+				<li class="lazyload" class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4729/131/1082870187/33470/27d8021f/58ec95feNde178c3b.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4768/9/1168306807/62888/ec5e4d06/58edcf32N145adb1c.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t5047/174/1240950455/36977/252e660/58eef348Nf75fdf91.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img10.360buyimg.com/cms/s100x100_jfs/t4918/132/1165346973/21518/fc9f36eb/58ed8736Nb04285c6.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/jfs/t4624/198/1266456958/134191/179dd19a/58db754eN2d52bafb.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/jfs/t4870/293/1179634888/130807/d9f8224c/58ede863N5620dc99.jpg"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4399/303/2514428771/40607/a2b3093/58f04587Nd8346fdd.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4507/208/2132374581/40132/dae693a9/58ec82e6N0f215d1d.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4666/269/2305849858/51248/ac4e3cfc/58edf9b4Nfd480c03.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4729/131/1082870187/33470/27d8021f/58ec95feNde178c3b.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t4768/9/1168306807/62888/ec5e4d06/58edcf32N145adb1c.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img1.360buyimg.com/da/s193x130_jfs/t5047/174/1240950455/36977/252e660/58eef348Nf75fdf91.jpg!q90"></li>
+				<li class="lazyload" data-img="http://img10.360buyimg.com/cms/s100x100_jfs/t4918/132/1165346973/21518/fc9f36eb/58ed8736Nb04285c6.jpg"></li>
+			</ul>
+		</div>
+	</div>
+</body>
+
+<script src="js/lazy-load-jquery.js"></script>
+<script>
+var lazyload = new LazyLoad()
+</script>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Document</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	ul {
+		list-style: none;
+	}
+	.gentle-rilling, .gentle-rilling2{
+		margin: 50px auto;
+		border:  1px solid #ccc;
+	}
+	.gentle-rilling li, .gentle-rilling2 li{
+		background: #ccc;
+		line-height: 30px;
+		text-align: center;
+	}
+	</style>
+</head>
+<body>
+	<button class="destory">destory</button>
+	<div class="gentle-rilling">
+		<ul>
+			<li>呵呵1</li>
+			<li>呵呵2</li>
+			<li>呵呵3</li>
+			<li>呵呵4</li>
+			<li>呵呵5</li>
+			<li>呵呵6</li>
+			<li>呵呵7</li>
+			<li>呵呵8</li>
+			<li>呵呵9</li>
+			<li>呵呵10</li>
+			<li>呵呵11</li>
+			<li>呵呵12</li>
+			<li>呵呵13</li>
+			<li>呵呵14</li>
+			<li>呵呵15</li>
+		</ul>
+	</div>
+
+	<div class="gentle-rilling2">
+		<ul>
+			<li>呵呵1</li>
+			<li>呵呵2</li>
+			<li>呵呵3</li>
+			<li>呵呵4</li>
+			<li>呵呵5</li>
+			<li>呵呵6</li>
+			<li>呵呵7</li>
+			<li>呵呵8</li>
+			<li>呵呵9</li>
+			<li>呵呵10</li>
+			<li>呵呵11</li>
+			<li>呵呵12</li>
+			<li>呵呵13</li>
+			<li>呵呵14</li>
+			<li>呵呵15</li>
+		</ul>
+	</div>
+</body>
+<script src="./js/jquery-1.11.2.min.js"></script>
+<script src="js/animate-scroll.js"></script>
+<script>
+var gentleRolling = new GentleRolling({
+	width: 100,
+	height: 30,
+	slideMargin: 10
+})
+
+var gentleRolling2 = new GentleRolling({
+	container: '.gentle-rilling2',
+	model: 'vertical',
+	width: 100,
+	height: 30,
+	slideMargin: 10,
+	slideLength: 6
+}) 
+
+$('.destory').on('click', function () {
+	gentleRolling.destory();
+})
+</script>
+</html>
